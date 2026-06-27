@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">PlacementPro</div>
+    <ul>
+        <li><a href="/dashboard/">Dashboard</a></li>
+        <li><a href="/profile/">Profile</a></li>
+        <li><a href="/logout/">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="profile-page">
+
+    <div class="profile-section">
+        <h2>Edit Profile</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Name</label>
+            <input type="text" name="name" value="{{ student.name }}">
+
+            <label>Email</label>
+            <input type="email" name="email" value="{{ student.email }}">
+
+            <button type="submit">Save Changes</button>
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

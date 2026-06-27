@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlacementPro - Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Left Side -->
+    <div class="left-panel">
+        <h1>PlacementPro</h1>
+
+        <p>
+            Prepare, Practice, Apply and Track your placement journey
+            from a single platform.
+        </p>
+
+        <div class="stats-box">
+            <div>
+                <h2>500+</h2>
+                <span>Students</span>
+            </div>
+
+            <div>
+                <h2>120+</h2>
+                <span>Companies</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-panel">
+
+        <div class="login-card">
+
+            <h2>Student Login</h2>
+
+            {% if error %}
+            <p style="color:red; text-align:center;">
+                {{ error }}
+            </p>
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                >
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="link">
+                New User?
+                <a href="/register/">Create Account</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

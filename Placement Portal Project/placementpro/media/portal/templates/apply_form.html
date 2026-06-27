@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply Form</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<div class="login-card">
+
+    <h2>Apply for {{ company.name }}</h2>
+    <p>{{ company.role }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="reason" placeholder="Why do you want this job?" required></textarea>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies - Placement Portal</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">PlacementPro</div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/companies">Companies</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="companies-page">
+
+    <div class="companies-header">
+        <h1>Available Companies</h1>
+        <p>Apply to top companies and track your placement journey</p>
+    </div>
+
+    <!-- COMPANY GRID (DATABASE DATA) -->
+    <div class="company-grid">
+
+        {% for company in companies %}
+
+        <div class="job-card">
+            <h2>{{ company.name }}</h2>
+
+            <p><b>Role:</b> {{ company.role }}</p>
+            <p><b>Package:</b> {{ company.package }}</p>
+            <p><b>Eligibility:</b> {{ company.eligibility }}</p>
+
+            <a href="/apply/{{ company.id }}/">Apply Now</a>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PlacementPro</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">PlacementPro</div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard/">Dashboard</a></li>
+        <li><a href="/companies/">Companies</a></li>
+        <li><a href="/applications/">Applications</a></li>
+        <li><a href="/profile/">Profile</a></li>
+        <li><a href="/logout/">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

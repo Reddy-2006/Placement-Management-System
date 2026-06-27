@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Resume</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">PlacementPro</div>
+    <ul>
+        <li><a href="/dashboard/">Dashboard</a></li>
+        <li><a href="/profile/">Profile</a></li>
+        <li><a href="/logout/">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="profile-page">
+
+    <div class="profile-section">
+
+        <h2>Upload Resume</h2>
+
+        <p style="color:gray;">
+            Upload your latest resume in PDF format
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <input type="file" name="resume" accept=".pdf" required>
+
+            <br><br>
+
+            <button type="submit">
+                Upload Resume
+            </button>
+        </form>
+
+        {% if student.resume %}
+            <p style="margin-top:20px;">
+                Current Resume:
+                <a href="{{ student.resume.url }}" target="_blank">View</a>
+            </p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

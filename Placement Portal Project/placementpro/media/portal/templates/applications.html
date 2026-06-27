@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications - PlacementPro</title>
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+</head>
+<body>
+
+<div class="applications-page">
+
+    <div class="app-header">
+        <h1>My Applications</h1>
+        <p>Track your placement journey and application status.</p>
+    </div>
+
+    <div class="app-stats">
+
+        <div class="stat-card">
+            <h2>15</h2>
+            <p>Applied</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>4</h2>
+            <p>Shortlisted</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>2</h2>
+            <p>Interviews</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>1</h2>
+            <p>Offers</p>
+        </div>
+
+    </div>
+
+    <div class="application-list">
+
+        <div class="application-card">
+            <div>
+                <h3>TCS</h3>
+                <p>Software Engineer</p>
+            </div>
+            <span class="status applied">Applied</span>
+        </div>
+
+        <div class="application-card">
+            <div>
+                <h3>Infosys</h3>
+                <p>System Engineer</p>
+            </div>
+            <span class="status shortlisted">Shortlisted</span>
+        </div>
+
+        <div class="application-card">
+            <div>
+                <h3>Accenture</h3>
+                <p>Associate Engineer</p>
+            </div>
+            <span class="status interview">Interview Scheduled</span>
+        </div>
+
+        <div class="application-card">
+            <div>
+                <h3>Wipro</h3>
+                <p>Project Engineer</p>
+            </div>
+            <span class="status review">Under Review</span>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

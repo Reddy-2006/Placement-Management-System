@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - Placement Portal</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">PlacementPro</div>
+
+    <ul>
+        <li><a href="/dashboard/">Dashboard</a></li>
+        <li><a href="/companies/">Companies</a></li>
+        <li><a href="/applications/">Applications</a></li>
+        <li><a href="/profile/">Profile</a></li>
+    </ul>
+</nav>
+
+<div class="profile-page">
+
+    <!-- PROFILE HEADER -->
+    <div class="profile-banner">
+
+        <div class="profile-image">
+            {{ student.name|default:"S" }}
+        </div>
+
+        <h2>{{ student.name }}</h2>
+        <p>{{ student.email }}</p>
+
+    </div>
+
+    <!-- PROFILE CONTENT -->
+    <div class="profile-grid">
+
+        <!-- ACADEMIC INFO -->
+        <div class="profile-section">
+            <h2>Academic Information</h2>
+            <p>Department: CSE</p>
+            <p>Year: 3rd Year</p>
+            <p>CGPA: 8.5</p>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="profile-section">
+            <h2>Skills</h2>
+
+            <div class="skills">
+                <span>Python</span>
+                <span>Java</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+        <!-- RESUME SECTION -->
+        <div class="profile-section">
+            <h2>Resume</h2>
+
+            {% if student.resume %}
+                <p>Uploaded Resume:</p>
+                <a href="{{ student.resume.url }}" target="_blank">
+                    View Resume
+                </a>
+            {% else %}
+                <p>No resume uploaded</p>
+            {% endif %}
+        </div>
+
+        <!-- PLACEMENT INFO -->
+        <div class="profile-section">
+            <h2>Placement Status</h2>
+            <p>Applied Companies: 5</p>
+            <p>Shortlisted: 2</p>
+            <p>Selected: 1</p>
+        </div>
+
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="profile-buttons">
+
+        <a href="/profile/edit/">
+            <button>Edit Profile</button>
+        </a>
+
+        <a href="/profile/upload_resume/">
+            <button>Upload Resume</button>
+        </a>
+
+        <a href="/applications/">
+            <button>View Applications</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
